@@ -1,8 +1,3 @@
-Yes — on Void Linux, you won’t find Spotify in the official repositories, but you can install it through the **void-packages** source build system.
-Here’s the process step-by-step:
-
----
-
 ## **1. Install the build tools**
 
 Void uses `xbps-src` to compile packages from source.
