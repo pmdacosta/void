@@ -39,7 +39,3 @@ sudo xb[Tab]
 ```
 
 …it will autocomplete to `xbps-install` or other matching commands.
-
----
-
-If you want, I can also show you a **one-liner fix** that makes this work instantly for *all users* on your Void system without editing `~/.bashrc` individually.
