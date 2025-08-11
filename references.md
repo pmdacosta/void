@@ -2,7 +2,6 @@ Here’s both answers rewritten in **GitHub-friendly Markdown** formatting:
 
 ---
 
-````markdown
 # Void Linux Resources & Documentation
 
 ## 📚 Official Documentation
@@ -104,8 +103,6 @@ sudo sv restart dhcpcd
 * Official docs: [https://docs.voidlinux.org](https://docs.voidlinux.org)
 * Forum: [https://forum.voidlinux.org](https://forum.voidlinux.org)
 * Arch Wiki (for general Linux tips): [https://wiki.archlinux.org](https://wiki.archlinux.org)
-
-```
 
 ---
 
