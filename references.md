@@ -103,8 +103,3 @@ sudo sv restart dhcpcd
 * Official docs: [https://docs.voidlinux.org](https://docs.voidlinux.org)
 * Forum: [https://forum.voidlinux.org](https://forum.voidlinux.org)
 * Arch Wiki (for general Linux tips): [https://wiki.archlinux.org](https://wiki.archlinux.org)
-
----
-
-Do you want me to **merge these into a single README.md** layout so it’s already styled and ready for a GitHub repo? That way it would be plug-and-play.
-```
