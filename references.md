@@ -1,7 +1,3 @@
-Here’s both answers rewritten in **GitHub-friendly Markdown** formatting:
-
----
-
 # Void Linux Resources & Documentation
 
 ## 📚 Official Documentation
