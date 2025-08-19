@@ -29,6 +29,8 @@ Default prefix: `Ctrl-b`
 ## Session Management
 - `Ctrl-b d` → detach session (tmux keeps running)
 - `tmux attach` → reattach last session
+- `tmux ls` → list sessions
+- `tmux attach -t name` → attach to session named *name*
 
 ## Misc
 - `Ctrl-b ?` → list all key bindings
