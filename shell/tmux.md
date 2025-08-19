@@ -31,6 +31,7 @@ Default prefix: `Ctrl-b`
 - `tmux attach` → reattach last session
 - `tmux ls` → list sessions
 - `tmux attach -t name` → attach to session named *name*
+- `tmux kill-session -t name` → kill session named *name*
 
 ## Misc
 - `Ctrl-b ?` → list all key bindings
