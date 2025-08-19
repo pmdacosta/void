@@ -54,9 +54,14 @@
 - `:ls` → list buffers
 - `:b nanme` → go to buffer *name*
 - `:split filename` → horizontal split
+- `Ctrl-w s` → horizontal split
 - `:vsplit filename` → vertical split
+- `Ctrl-w v` → vertical split
 - `Ctrl-w w` → switch windows
 - `Ctrl-w q` → close window
+
+## Help
+- `:help <command>` → Go to section <commnad> of the help manual
 
 # `:g` Commands
 
