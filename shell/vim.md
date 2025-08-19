@@ -29,6 +29,15 @@
 - `G` → bottom of file
 - `:n` → go to line *n*
 
+- `Ctrl-f` → page forward
+- `Ctrl-b` → page backward
+- `Ctrl-d` → page down (half page)
+- `Ctrl-u` → page up (half page)
+
+- `H` → move cursor to top (High)
+- `M` → move cursor to middle (Middle)
+- `L` → move cursor to bottom (Low)
+  
 - `[(` → go to previous (
 - `])` → go to next (
 - `[{` → go to previous {
