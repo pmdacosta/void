@@ -61,6 +61,7 @@
 - `Ctrl-w q` → close window
 
 ## Help
+- `:help` → Go to help manual
 - `:help <command>` → Go to section <commnad> of the help manual
 
 # `:g` Commands
