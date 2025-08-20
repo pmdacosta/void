@@ -1,4 +1,4 @@
-### Get a line count - wc
+## Get a line count - wc
 
 single file
 
@@ -10,4 +10,12 @@ multile files
 
 ```bash
 wc -l file1 file2 file3
+```
+
+## `rm`
+
+Remove files not ending with `.c`
+
+```bash
+rm !(*.c)
 ```
