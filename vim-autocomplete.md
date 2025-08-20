@@ -13,10 +13,11 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 [coc](https://github.com/neoclide/coc.nvim)
 
-install `nodejs`
+install `nodejs` [nvm-sh](https://github.com/nvm-sh/nvm/blob/master/README.md)
 
 ```bash
-curl -sL install-node.vercel.app/lts | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+nvm install 16
 ```
 
 open `.vimrc`
