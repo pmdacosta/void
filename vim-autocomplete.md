@@ -1,5 +1,7 @@
 # Setup autocompletion for vim
 
+source [C, C++, obj-c Intellisense and autocomplete setup in Vim (Coc, ccls, bear, compile commands)](C, C++, obj-c Intellisense and autocomplete setup in Vim (Coc, ccls, bear, compile commands))
+
 ## Install vim-plug
 
 [vim-plug](https://github.com/junegunn/vim-plug)
