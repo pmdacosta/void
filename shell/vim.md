@@ -43,6 +43,8 @@
 - `[{` → go to previous {
 - `]}` → go to next }
 
+- `gd` → go to definition (variables and functions)
+
 ## Editing
 - `x` → delete character
 - `dd` → delete line
