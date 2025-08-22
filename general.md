@@ -9,11 +9,14 @@
   - `man xbps-remove`
 
 ## 💬 Community Support
-- **Void Linux Forum** – official user discussion board:  
-  [https://forum.voidlinux.org](https://forum.voidlinux.org)
+- **Void Linux Forum**:  
+  [https://voidforums.com/](https://voidforums.com/)
 - **IRC** – `#voidlinux` on Libera Chat (use [https://web.libera.chat](https://web.libera.chat) without installing an IRC client)
 - **Reddit** – unofficial but active:  
   [https://reddit.com/r/voidlinux](https://reddit.com/r/voidlinux)
+- **Linux Questions** - forum
+  [https://www.linuxquestions.org/questions/](https://www.linuxquestions.org/questions/]
+
 
 ## 💻 Development & Issues
 - **Void Linux GitHub** – issue tracking, package requests, PRs:  
