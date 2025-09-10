@@ -102,6 +102,12 @@
 
 - `Ctrl-a` → increase number
 
+## Nerd Tree
+
+- [Creating a new file or directory in Vim using NERDTree](https://sookocheff.com/post/vim/creating-a-new-file-or-directoryin-vim-using-nerdtree/)
+- [NERDTree Cheat sheet](https://cheatography.com/stepk/cheat-sheets/vim-nerdtree/)
+- `m` : bring up NERDTree FileSystem menu
+
 
 ## References
 
