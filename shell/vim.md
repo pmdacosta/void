@@ -100,6 +100,8 @@
 - `:v/./d` → keep only blank lines
 - `:g/ERROR/w errors.txt` → write all lines with `ERROR` to file
 
+- `Ctrl-a` → increase number
+
 
 ## References
 
