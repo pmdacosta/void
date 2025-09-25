@@ -43,7 +43,16 @@
 - `[{` → go to previous {
 - `]}` → go to next }
 
-- `gd` → go to definition (variables and functions)
+- `g[` → go to definition (variables and functions)
+- see more [Go to definition using g](https://vim.fandom.com/wiki/Go_to_definition_using_g)
+- `gd` will take you to the local declaration.
+- `gD` will take you to the global declaration.
+- `g*` search for the word under the cursor (like *, but g* on 'rain' will find words like 'rainbow').
+- `g#` same as g* but in backward direction.
+- `gg` goes to the first line in the buffer (or provide a count before the command for a specific line).
+- `G` goes to the last line (or provide a count before the command for a specific line).
+- `gf` will go to the file under the cursor
+- `g]` and other commands will jump to a tag definition (a tag can be a function or variable name, or more).
 
 ## Editing
 - `x` → delete character
@@ -60,6 +69,11 @@
 - `?text` → search backward
 - `n` → repeat search
 - `:%s/old/new/g` → replace all
+
+### Better Search & Replace
+
+- [https://stackoverflow.com/a/597932](https://stackoverflow.com/a/597932)
+- [https://stackoverflow.com/a/49853906](https://stackoverflow.com/a/49853906)
 
 ## Buffers / Windows
 - `:ls` → list buffers
