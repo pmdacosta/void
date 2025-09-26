@@ -43,7 +43,6 @@
 - `[{` → go to previous {
 - `]}` → go to next }
 
-- `g[` → go to definition (variables and functions)
 - see more [Go to definition using g](https://vim.fandom.com/wiki/Go_to_definition_using_g)
 - `gd` will take you to the local declaration.
 - `gD` will take you to the global declaration.
@@ -53,6 +52,7 @@
 - `G` goes to the last line (or provide a count before the command for a specific line).
 - `gf` will go to the file under the cursor
 - `g]` and other commands will jump to a tag definition (a tag can be a function or variable name, or more).
+- `Ctrl + ]` same as `g]` but does not prompt
 
 ## Editing
 - `x` → delete character
