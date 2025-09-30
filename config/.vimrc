@@ -3,6 +3,10 @@
 " Leader is \
 "
 
+" remap Leader to space
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+
 set nocompatible
 set backspace=indent,eol,start
 set history=50
@@ -13,8 +17,6 @@ set cinoptions=:0,l1,g0,t0
 " l1 align case labels 1 shiftwidth from the switch
 " g0 braces in struct/unions align to column 0
 " t0 function return type sticks to the function name
-command! ClangFmt execute '%!clang-format'
-nnoremap <leader>ff :ClangFmt<CR>
 
 let g:loaded_matchparen = 1
 set noshowmatch
@@ -31,28 +33,58 @@ set termguicolors
 " colorscheme habamax
 colorscheme darkblue
 
+set is hls
 set number
 " set relativenumber
 set splitright
 set splitbelow
 
-" TODO: check how to do this only when it's a .c or .h file
-autocmd VimEnter *.c,*.h vnew | wincmd h
+" autocmd VimEnter *.c,*.h vnew | wincmd h
 
 set mouse=a " Allow mouse movement
 
-" save current file and quit all windows
+set completeopt=menuone,noinsert,noselect
+
+nnoremap <c-h> :wincmd w<CR>
+nnoremap <c-t> :tag
+nnoremap <c-r> :buffer
+" Open definition in vsplit
+nnoremap <c-p> :vert stjump <C-r><C-w><CR>
+
 nnoremap XX :w<CR>:qa<CR>
+nnoremap QQ :qa<CR>
 
 " see https://stackoverflow.com/questions/597687/how-to-quickly-change-variable-names-in-vim
 " For local replace
-nnoremap gl gd[{V%::s/<C-R>///gc<left><left><left>
-
+nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
 " For global replace
 nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 
+" Open file in vsplit
+nnoremap gF :vert wincmd f<CR>
+
+
+command! ClangFmt execute '%!clang-format'
+nnoremap <leader>ff :ClangFmt<CR>
+nnoremap <leader>cc :cclose<CR>  " close quickfix
+nnoremap <leader>n :cnext<CR>
+nnoremap <leader>p :cprevious<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>v :vsplit
+nnoremap <leader>e :e
+
 " run ctags
 nnoremap <F5> :!ctags -R ./src<CR>
+" run binary
+nnoremap <F7> :!clear<CR>:!./game<CR>
+
+" Function to rename the variable under the cursor
+function! Rnvar()
+  let word_to_replace = expand("<cword>")
+  let replacement = input("new name: ")
+  execute '%s/\(\W\)' . word_to_replace . '\(\W\)/\1' . replacement . '\2/gc'
+endfunction
+nnoremap <F2> :call Rnvar()<CR>
 
 " run make
 " nnoremap <c-m> :!clear<CR>:!./make.sh<CR>
@@ -66,6 +98,8 @@ function! ToggleQuickfixBuild()
     endif
   endfor
 
+  "execute "w"
+
   " Run build and populate quickfix
   cgetexpr systemlist('./make.sh')
 
@@ -75,40 +109,29 @@ function! ToggleQuickfixBuild()
     return
   endif
 
-  " Ensure new vertical split opens on the right
-  " let s_save_splitright = &splitright
-  " set splitright
-
-  " Open quickfix vertically
-  vert copen
-
-  " Resize quickfix to half the total columns
-  " Use &columns (total Vim columns) — compute before measuring current window
-  let l:target = float2nr(&columns / 2)
-  execute 'vertical resize ' . l:target
-
-  " restore splitright preference
-  " let &splitright = s_save_splitright
+  copen
 
   " Jump to first error (and leave focus on code)
-  cfirst
   wincmd p
+  cfirst
+  cnext
 endfunction
 
 nnoremap <C-M> :call ToggleQuickfixBuild()<CR>
-nnoremap <leader>cc :cclose<CR>  " close quickfix
-nnoremap <leader>cf :cfirst<CR>:cnext<CR>
-nnoremap <leader>cn :cnext<CR>
-
-" run binary
-nnoremap <F7> :!clear<CR>:!./game<CR>
+" nnoremap <C-M> :cgetexpr systemlist('./make.sh')<CR>:copen<CR>:cfirst<CR>:cnext<CR>
 
 " ----- PLUGINS ------
 "
-map <F6> :NERDTreeToggle<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
 
 " vim-plug plugins
 call plug#begin()
 "    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'preservim/nerdtree'
+    Plug 'jlanzarotta/bufexplorer'
 call plug#end()
+
+" <Leader>be normal open
+" <Leader>bt toggle open / close
+" <Leader>bs force horizontal split open
+" <Leader>bv force vertical split open
