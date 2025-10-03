@@ -47,7 +47,6 @@ set completeopt=menuone,noinsert,noselect
 
 nnoremap <c-h> :wincmd w<CR>
 nnoremap <c-t> :tag
-nnoremap <c-r> :buffer
 " Open definition in vsplit
 nnoremap <c-p> :vert stjump <C-r><C-w><CR>
 
@@ -72,6 +71,7 @@ nnoremap <leader>p :cprevious<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>v :vsplit
 nnoremap <leader>e :e
+nnoremap <leader>bb :buffer
 
 " run ctags
 nnoremap <F5> :!ctags -R ./src<CR>
@@ -94,11 +94,11 @@ function! ToggleQuickfixBuild()
   for win in range(1, winnr('$'))
     if getwinvar(win, '&buftype') ==# 'quickfix'
       cclose
-      return
+      "return
     endif
   endfor
 
-  "execute "w"
+  silent execute "wa"
 
   " Run build and populate quickfix
   cgetexpr systemlist('./make.sh')
