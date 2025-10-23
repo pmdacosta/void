@@ -7,34 +7,45 @@
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
+set clipboard=unnamed
 set nocompatible
 set backspace=indent,eol,start
 set history=50
+
 filetype plugin indent on
+syntax on
+let g:loaded_matchparen = 1
+set noshowmatch
+set nowrap
+set smarttab
+set tabstop=4
+set shiftwidth=4
 set cindent
+set expandtab
+set autoindent
+set smartindent
+set formatoptions+=r
+
 set cinoptions=:0,l1,g0,t0
 " :0 put { at column 0 important for [[ / ]]
 " l1 align case labels 1 shiftwidth from the switch
 " g0 braces in struct/unions align to column 0
 " t0 function return type sticks to the function name
 
-let g:loaded_matchparen = 1
-set noshowmatch
-syntax on
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set autoindent
-set smartindent
 set termguicolors
+set ignorecase
+set smartcase
 " colorscheme industry
 " colorscheme delek
 " colorscheme desert
 " colorscheme habamax
-colorscheme darkblue
+" colorscheme darkblue
+" colorscheme gold
+colorscheme puregold
+" colorscheme grey
 
 set is hls
-set number
+" set number
 " set relativenumber
 set splitright
 set splitbelow
@@ -49,6 +60,7 @@ nnoremap <c-h> :wincmd w<CR>
 nnoremap <c-t> :tag
 " Open definition in vsplit
 nnoremap <c-p> :vert stjump <C-r><C-w><CR>
+nnoremap <c-n> :noh<CR>
 
 nnoremap XX :w<CR>:qa<CR>
 nnoremap QQ :qa<CR>
@@ -66,8 +78,11 @@ nnoremap gF :vert wincmd f<CR>
 command! ClangFmt execute '%!clang-format'
 nnoremap <leader>ff :ClangFmt<CR>
 nnoremap <leader>cc :cclose<CR>  " close quickfix
-nnoremap <leader>n :cnext<CR>
-nnoremap <leader>p :cprevious<CR>
+" nnoremap <leader>n :cnext<CR>
+" nnoremap <leader>p :cprevious<CR>
+nnoremap <leader>n :vsplit .<CR>
+nnoremap <leader>sd :vsplit /usr/include/SDL2/<CR>
+nnoremap <leader>ds :e /usr/include/SDL2/<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>v :vsplit
 nnoremap <leader>e :e
@@ -101,7 +116,7 @@ function! ToggleQuickfixBuild()
   silent execute "wa"
 
   " Run build and populate quickfix
-  cgetexpr systemlist('./make.sh')
+  cgetexpr systemlist('./build.sh')
 
   " If no quickfix entries, don't open the window
   if empty(getqflist())
@@ -114,7 +129,7 @@ function! ToggleQuickfixBuild()
   " Jump to first error (and leave focus on code)
   wincmd p
   cfirst
-  cnext
+  " cnext
 endfunction
 
 nnoremap <C-M> :call ToggleQuickfixBuild()<CR>
@@ -127,7 +142,7 @@ nnoremap <leader>t :NERDTreeToggle<CR>
 " vim-plug plugins
 call plug#begin()
 "    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'preservim/nerdtree'
+"    Plug 'preservim/nerdtree'
     Plug 'jlanzarotta/bufexplorer'
 call plug#end()
 
