@@ -69,6 +69,7 @@
 - `?text` → search backward
 - `n` → repeat search
 - `:%s/old/new/g` → replace all
+- `Ctrl-r``Ctrl-w` - can paste the current word under the cursor 
 
 ### Better Search & Replace
 
