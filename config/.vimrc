@@ -41,8 +41,11 @@ set smartcase
 " colorscheme habamax
 " colorscheme darkblue
 " colorscheme gold
-colorscheme puregold
+" colorscheme puregold
 " colorscheme grey
+" colorscheme studio98
+colorscheme nofrils-light
+
 
 set is hls
 " set number
@@ -57,10 +60,10 @@ set mouse=a " Allow mouse movement
 set completeopt=menuone,noinsert,noselect
 
 nnoremap <c-h> :wincmd w<CR>
-nnoremap <c-t> :tag
+nnoremap <c-t> :tag 
 " Open definition in vsplit
-nnoremap <c-p> :vert stjump <C-r><C-w><CR>
-nnoremap <c-n> :noh<CR>
+nnoremap <c-p> :vert stjump <C-r><C-w><CR> 
+nnoremap <c-n> :noh<CR> 
 
 nnoremap XX :w<CR>:qa<CR>
 nnoremap QQ :qa<CR>
@@ -84,9 +87,9 @@ nnoremap <leader>n :vsplit .<CR>
 nnoremap <leader>sd :vsplit /usr/include/SDL2/<CR>
 nnoremap <leader>ds :e /usr/include/SDL2/<CR>
 nnoremap <leader>w :w<CR>
-nnoremap <leader>v :vsplit
-nnoremap <leader>e :e
-nnoremap <leader>bb :buffer
+nnoremap <leader>v :vsplit 
+nnoremap <leader>e :e 
+nnoremap <leader>bb :buffer 
 
 " run ctags
 nnoremap <F5> :!ctags -R ./src<CR>
@@ -117,6 +120,7 @@ function! ToggleQuickfixBuild()
 
   " Run build and populate quickfix
   cgetexpr systemlist('./build.sh')
+  " cgetexpr systemlist('make')
 
   " If no quickfix entries, don't open the window
   if empty(getqflist())
